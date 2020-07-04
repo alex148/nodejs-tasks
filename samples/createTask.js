@@ -58,10 +58,10 @@ async function createTask(
     task.appEngineHttpRequest.body = Buffer.from(payload).toString('base64');
   }
 
-  if (inSeconds) {
+  if (inMilliseconds) {
     // The time when the task is scheduled to be attempted.
     task.scheduleTime = {
-      seconds: inSeconds + Date.now() / 1000,
+      seconds: inMilliseconds + Date.now() / 1000,
     };
   }
 
